@@ -5,6 +5,7 @@
 
 *{
 	box-sizing: border-box;
+	outline: none;
 }
 
 body {
@@ -25,14 +26,10 @@ h1{
 	}
 }
 
-.grid-conteiner{
-	//display:flex;
-	//justify-content:center;
-	//flex-direction:column;
-}
+
 .container{
 	width: 700px;
-	border: 1px solid red;
+	//border: 1px solid red;
 
 }
 .hexagon{
@@ -42,6 +39,10 @@ h1{
 	justify-content: center;
 	
 
+.index{
+	z-index: 2;
+}
+
 
 }
 .header_background{
@@ -50,12 +51,58 @@ h1{
 	justify-content:center;
 	background-size: cover;
 }
+.header_height{
+	height:100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+.header_height_down{
+	height:100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+}
+.header_icons_flex_down{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	img{
+		width: 150%;
+		height: 100%;
+		opacity: .7;
+
+		&:hover{
+			opacity: 1;
+		}
+	}
+
+
+
+}
+.header_icons_flex_up{
+	display: flex;
+	justify-content: center;
+
+	img{
+		width: 150%;
+		height: 100%;
+		opacity: .7;
+		&:hover{
+			opacity: 1;
+		}
+	}
+
+
+}
 #header{
 	height: 90vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	text-align: center;
 	h2{
 	font-size: 5vh;
 	color: white;
@@ -67,26 +114,24 @@ h1{
 		font-family: 'latohairline';
 	}
 	
-	#header_logo{
-		
-
-	}
-	#header_content{
-		
-	}
 	#header_icons{
-		height: 50%;
+		height: 45%;
+		display: flex;
 	}
 }
 .nav_background{
 	display:flex;
 	justify-content:center;
+
 }
 nav{
 	height: 10vh;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	 //position: fixed;
+	  top: 0;
+	  z-index: 1;
 	h1{
 		font-size: 5vh;
 		color: #676767;
@@ -107,11 +152,32 @@ nav{
 				color: #676767;
 				text-decoration: none;
 				font-family: 'latolight';
+				transition: 0.3s;
+				&:hover{
+					color:  #9f449b;
+				}
 			}
 		}
 	}
 	
 }
+
+
+
+.border{position:relative;width:200px;height:80px;z-index: 20;}
+.border2{position:relative;width:240px;height:100px;z-index: 20;}
+.border:before, .border2:before, .border:after, .border2:after, .border>:first-child:before, .border2>:first-child:before, .border>:first-child:after, .border2>:first-child:after {
+    position:absolute;
+    width:20px; height: 20px;
+    border-color:#9f449b; /* or whatever colour */
+    border-style:solid; /* or whatever style */
+    content: ' ';
+}
+.border:before, .border2:before {top:0;left:0;border-width: 0px 0 0 0px}
+.border:after, .border2:after {top:0;right:0;border-width: 1px 1px 0 0}
+.border>:first-child:before, .border2>:first-child:before {bottom:0;right:0;border-width: 0 0px 0px 0}
+.border>:first-child:after, .border2>:first-child:after {bottom:0;left:0;border-width: 0 0 1px 1px}
+
 
 
 .icons_background{
@@ -134,6 +200,7 @@ nav{
 		font-family:'latolight';
 		font-size: 2vh;
 		color: #676767;
+		text-align: center;
 	}
 	h3{
 		font-family:'latolight';
@@ -179,6 +246,7 @@ nav{
 		color: #676767;
 		font-size: 6vh;
 
+
 	}
 	p{
 		color: #676767;
@@ -191,7 +259,8 @@ nav{
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			//margin-bottom: 10vh;
+
+
 
 	
 		}	
@@ -223,7 +292,11 @@ nav{
 		    text-align: center;
 		    text-decoration: none;
 		    display: inline-block;
-		    font-size: 16px;
+		    font-size: 14px;
+		    transition: 0.15s;
+		    &:hover{
+		    	box-shadow:  0 4px 2px -2px gray;
+		    }
 		}
 
 
@@ -279,7 +352,7 @@ nav{
 .team_background{
 	display:flex;
 	justify-content:center;
-	background:#eeeeee;
+	background:#ffffff;
 }
 .team_1{
 				display: flex;
@@ -294,6 +367,7 @@ nav{
 	img{
 		padding: 13%;
 	}
+
 }
 .team{
 	height: 90vh;
@@ -310,10 +384,17 @@ nav{
 			width: 80%;
 		}
 	#team{
-
+		#our_team{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 	
 
 		#arrows{
+			display: flex;
+			justify-content: center;
+			align-items: center;
 
 			#arrow_left{
 
@@ -338,7 +419,7 @@ nav{
 .skills_background{
 	display:flex;
 	justify-content:center;
-	background:#eeeeee;
+	background:#ffffff;
 }
 .skills{
 	height: 50vh;
@@ -358,20 +439,72 @@ nav{
 	#skills{
 
 		#our_skills{
-
+			display: flex;
+			justify-content: center;
+			align-items: center;
 	
 		}	
 
 	
-	}	
+	}
+
 	#skills_diagrams{
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+					.colors{
+							width: 100%;
+							height: 2vh;
+						}
+
+
+			.diagram_flex2{
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+				}
+			.diagram_flex_up{
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					width: 100%;
+			}
 
 		#left_diagrams{
+			padding: 5%;
 			.web_design{
+				.grey{
+					background:#f0f0f0;
+					position: relative;
+					width: 100%;
+					height: 100%;
+					.violet{
+						position:absolute;
+						background:#9f449b;
+						width: 0%;
+						height: 100%;
 
+					}
+
+				}
 	
 			}
 			.HTML{
+				.grey{
+					background:#f0f0f0;
+					position: relative;
+					width: 100%;
+					height: 100%;
+					.violet{
+						position:absolute;
+						background:#9f449b;
+						width: 0%;
+						height: 100%;
+
+					}
+
+				}
 
 	
 			}
@@ -379,11 +512,40 @@ nav{
 	
 		}
 		#right_diagrams{
+			padding: 5%;
 			.graphic_design{
+				.grey{
+					background:#f0f0f0;
+					position: relative;
+					width: 100%;
+					height: 100%;
+					.violet{
+						position:absolute;
+						background:#9f449b;
+						width: 0%;
+						height: 100%;
+
+					}
+
+				}
 
 	
 			}
 			.UL{
+				.grey{
+					background:#f0f0f0;
+					position: relative;
+					width: 100%;
+					height: 100%;
+					.violet{
+						position:absolute;
+						background:#9f449b;
+						width: 0%;
+						height: 100%;
+
+					}
+
+				}
 
 	
 			}
@@ -397,14 +559,13 @@ nav{
 
 }
 
-
 .scores_background{
 	display:flex;
 	justify-content:center;
 	background:#eeeeee;
 }
 .scores_inside{
-	padding: 15%;
+	width:100%;
 	display: flex;
 	flex-direction:column;
 	align-items: center;
@@ -412,11 +573,12 @@ nav{
 }
 .scores{
 	height: 70vh;
+
 	display: flex;
 	flex-direction:column;
 	align-items: center;
 	justify-content: space-around;
-		h1{
+		p{
 			color: black;
 			font-size: 5vh;
 		}
@@ -430,7 +592,7 @@ nav{
 		}
 		
 	#scores{
-
+		width: 100%;
 		#scores_left{
 
 		}
@@ -452,6 +614,13 @@ nav{
 			justify-content: center;
 			align-items:center;
 			text-align: center;
+			font-family: 'latoregular';
+			font-size: 2vh;
+			h4{
+				font-size: 3vh;
+				width: 80%;
+				font-family: 'latolight';
+			}
 
 			}
 
@@ -470,86 +639,105 @@ nav{
 	justify-content:center;
 }
 .portfolio{
-	height: 100vh;
+	height: 120vh;
 	display: flex;
 	flex-direction: column;	
 	align-items: center;
-	justify-content: center;
+	justify-content: space-around;
+	h1{
+		color: #676767;
+		font-size: 6vh;
+	}
 	.photo_flex{
 						display: flex;
 		flex-direction: column;	
 		align-items: center;
-		justify-content: center;
+		justify-content: space-around;
 			}
 
 	#portfolio{
-
+		#portfolio_container{
+			display: flex;
+		flex-direction: column;	
+		align-items: center;
+		justify-content: space-around;
+		}
 		#our_portfolio{
 		display: flex;
-		flex-direction: column;	
 		align-items: center;
 		justify-content: center;
 	
 		}	
+		.portfolio_buttons{
+			display: flex;
+		align-items: center;
+		justify-content: center;
+		button{
+			background: none;
+			box-shadow:none;
+		    border: 1px solid #676767;
+		    border-radius: 4px;
+		    color: #676767;
+		    padding: 5px 12px;
+		    margin: 5% 1% 3% 1%;
+		    text-align: center;
+		    text-decoration: none;
+		    display: inline-block;
+		    font-size: 8px;
+		    transition: 0.15s;
+		    &:hover{
+		    	box-shadow:  0 4px 2px -2px gray;
+		    	background:#9f449b;
+		    	color: white;
+		    	border: 1px solid #9f449b;
+
+		    }
+		}
+
+
+		}
 
 	
 	}	
 	#photos_up{
 		display: flex;
+	
 		img{
-				width: 100%;
+				width: 90%;
+				
+				
 			}
 
-
-		#photo_up1{
-
-
-
-	
-		}
-		#photo_up2{
-			
-
-	
-		}
-		#photo_up3{
-			
-
-	
-		}
 
 	
 	}
 	#photos_down{
 		img{
-				width: 100%;
+				width: 90%;
 			}
 
-		#photo_down1{
-			
-
-	
-		}
-		#photo_down2{
-			
-
-	
-		}
-		#photo_down3{
-			
-
-	
-		}
+		
 
 	
 	}
 	#button_portfolio{
 		button{
 			background:#9f449b;
+			box-shadow:none;
+		    border: none;
+		    border-radius: 4px;
+		    color: white;
+		    padding: 15px 32px;
+		    text-align: center;
+		    text-decoration: none;
+		    display: inline-block;
+		    font-size: 14px;
+		    transition: 0.15s;
+		    &:hover{
+		    	box-shadow:  0 4px 2px -2px gray;
+		    }
 		}
-		#button_portfolio_size{
-
-		}
+		
 	}
 	
 
@@ -568,10 +756,13 @@ nav{
 	display: flex;
 	flex-direction: column;	
 	align-items: center;
-	justify-content: center;
+	justify-content: space-around;
+	h1{
+		color: #676767;
+		font-size: 6vh;
+	}
 	#contact_form{
 	display: flex;
-	align-items: center;
 	justify-content: center;
 	}
 	form{
@@ -579,14 +770,51 @@ nav{
 	flex-direction: column;	
 	align-items: center;
 	justify-content: center;
+	input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #676767;
+    box-sizing: border-box;
+	}
+	input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #676767;
+	}
+	textarea {
+    width: 100%;
+  	padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #676767;
+	}
+
 		#input-submit{
 			background:#9f449b;
+			box-shadow:none;
+		    border: none;
+		    border-radius: 4px;
+		    color: white;
+		    padding: 15px 32px;
+		    text-align: center;
+		    text-decoration: none;
+		    display: inline-block;
+		    font-size: 14px;
+		    transition: 0.15s;
+		    &:hover{
+		    	box-shadow:  0 4px 2px -2px gray;
+		    }
 		}
 	}
 	#touch{
 
 		#get_in_touch{
-
+			display: flex;
+			justify-content: center;
+			align-items: center;
 	
 		}	
 
@@ -600,9 +828,27 @@ nav{
 	
 		}
 		#contact_id{
-			
+			padding-left: 2vw;
+			p{
+				font-size: 3vh; 
+			}	
+			.regular_contact{
+				font-family: 'latoregular';
+			}
+			.icons_contact{
+				display: flex;
+				justify-content: space-around;
+				width: 50%;
+				img{
+					opacity: .7;
+					transition: 0.15s;
 
-	
+						&:hover{
+							opacity: 1;
+							transform: scale(1.2);
+						}
+				}
+			}
 		}
 	
 	}
@@ -625,7 +871,16 @@ nav{
 
 
 
-
+.sticky {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  border-top: 0;
+  background: white;
+  padding: 1% 10% 1% 10% ;
+}
 
 
 

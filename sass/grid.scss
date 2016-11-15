@@ -36,15 +36,12 @@ content : " ";
 display : table; 
 clear: both;
 }
-.row{
-	border: 1px solid black;
-}
 
 [class*='col-'] { 
 float: left;
 min-height: 1px;
 width: 16.666%; 
-border: 1px solid black;
+//border: 1px solid black;
 
 
 }
@@ -75,21 +72,9 @@ width: 100%;
 
 
 
-
-#footer{
-		height: 100px;
-
-}
-
-@media (max-width: 550px) { [class*='section_skills'] {
-height: 300vh; }
-}
 @media (max-width: 550px) { [class*='col-'] {
-width: 100%; }
+ }
 }
-@media (max-width: 550px) { [class*='slider'] {
-float: none;
-width: 100%; }
-}
+
 
 
